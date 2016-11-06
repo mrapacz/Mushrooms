@@ -16,8 +16,8 @@ def train_and_test(X, Y, train_set_fraction):
     X_train, Y_train, X_test, Y_test = split_data(X.astype(float), Y, train_set_fraction)
 
     log_reg = LogisticRegression(max_iter=10000)
-    log_reg.fit(X_train, Y_train)
-    return log_reg.score(X_test, Y_test)
+    log_reg.fit(X_train.astype(float), Y_train)
+    return log_reg.score(X.astype(float),Y)
 
 
 def prepare_data():
